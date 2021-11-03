@@ -21,10 +21,6 @@
       type: 'string',
       message: 'Author'
     },
-    extra: {
-      type: 'string',
-      message: 'Extra Messaging!'
-    }
   },
 
   /**
