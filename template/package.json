@@ -1,41 +1,43 @@
 {
-  "private": true,
+  "name": "{{name}}",
   "version": "0.1.0",
-  "name": "component-lib-template-ts",
-  "main": "dist/component-lib-template-ts.common.js",
+  "private": false,
+  "license": "MIT",
+  "author": "{{author}}",
+  "description": "{{description}}",
+  "types": "./types/index.d.ts",
+  "main": "./dist/{{name}}.js",
+  "files": [
+    "dist/*",
+    "types/*"
+  ],
   "scripts": {
-    "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve",
-    "build:lib": "vue-cli-service build --target lib --name component-lib-template-ts ./src/main.ts",
-    "build:scss": "node-sass --output-style expanded src/sass/style.scss dist/component-lib-template-ts.css",
-    "build": "npm run build:lib && npm run build:scss && npm run build:declarations"
+    "lint": "vue-cli-service lint",
+    "build:lib": "vue-cli-service build --target lib --name {{name}} ./src/lib.ts",
+    "build": "npm run build:lib"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^8.4.2"
+    "vue-property-decorator": "^9.1.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.33.0",
-    "@typescript-eslint/parser": "^2.33.0",
-    "@vue/cli-plugin-babel": "~4.4.0",
-    "@vue/cli-plugin-eslint": "~4.4.0",
-    "@vue/cli-plugin-typescript": "~4.4.0",
-    "@vue/cli-service": "~4.4.0",
-    "@vue/eslint-config-airbnb": "^5.0.2",
-    "@vue/eslint-config-typescript": "^5.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.14.1",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "typescript": "~3.9.3",
+    "prettier": "^2.2.1",
+    "typescript": "~4.1.5",
+    "vue-dts-gen": "^0.3.0",
     "vue-template-compiler": "^2.6.11"
-  },
-  "files": [
-    "src",
-    "dist/*.{js,css}"
-  ]
+  }
 }

@@ -1,22 +1,8 @@
-import ComponentA from './components/ComponentA.vue';
-import ComponentB from './components/ComponentB.vue';
+import Vue from "vue";
+import App from "@/App.vue";
 
-const Components: any = {
-  ComponentA,
-  ComponentB,
-};
+Vue.config.productionTip = false;
 
-const Install: any = (Vue: any, options: any = {}) => {
-
-  Object.keys(Components).forEach((component) => {
-    Vue.component(component, Components[component]);
-  });
-};
-
-// auto install
-if (typeof window !== 'undefined' && window.Vue) {
-
-  Install(window.Vue);
-}
-
-export default Install;
+new Vue({
+  render: (h) => h(App),
+}).$mount("#app");
